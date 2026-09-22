@@ -12,6 +12,13 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  php:
+    image: php:8.3-fpm
+    container_name: cleancity_php
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+
   adminer:
     image: adminer
     container_name: cleancity_adminer
